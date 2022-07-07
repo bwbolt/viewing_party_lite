@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
+      flash[:alert] = 'Must Include Unique Email'
       render :new
     end
   end
